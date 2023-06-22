@@ -40,6 +40,8 @@
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^1.0.2",
+    "eslint": "^8.43.0",
+    "eslint-plugin-react": "^7.32.2",
     "hardhat": "^2.10.1"
   }
 }
