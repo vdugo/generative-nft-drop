@@ -20,7 +20,7 @@ describe('NFT', () =>
     beforeEach(async () =>
     {
         accounts = await ethers.getSigners()
-        owner = accounts[0]
+        deployer = accounts[0]
         minter = accounts[1]
     })
 
@@ -62,7 +62,7 @@ describe('NFT', () =>
         })
         it('returns the owner', async () =>
         {
-          expect(await nft.owner()).to.equal(owner.address)
+          expect(await nft.owner()).to.equal(deployer.address)
         })
 
     })
