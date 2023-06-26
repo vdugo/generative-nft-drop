@@ -9,6 +9,7 @@ import preview from '../preview.png'
 import Navigation from './Navigation';
 import Data from './Data'
 import Loading from './Loading';
+import Mint from './Mint'
 
 // ABIs: Import your contract ABIs here
 import NFT_ABI from '../abis/NFT.json'
@@ -81,7 +82,19 @@ function App() {
         <>
           <Row>
             <Col>
+              {
+              balance > 0 ?
+              <div className='text-center'>
+                <img 
+                src={`https://gateway.pinata.cloud/ipfs/QmQPEMsfd1tJnqYPbnTQCjoa8vczfsV1FmqZWgRdNQ7z3g/${balance.toString()}.png`}
+                alt='Open Punk' 
+                width='400px' 
+                height='400px'
+                />
+              </div>
+              :
               <img src={preview} alt=''/>
+              }
             </Col>
 
             <Col>
@@ -94,6 +107,13 @@ function App() {
               totalSupply={totalSupply}
               cost={cost}
               balance={balance} 
+              />
+
+              <Mint 
+              provider={provider}
+              nft={nft}
+              cost={cost}
+              setIsLoading={setIsLoading}
               />
             </Col>
           </Row>
